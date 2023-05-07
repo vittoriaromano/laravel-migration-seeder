@@ -16,18 +16,17 @@ return new class extends Migration
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('company_name', 50);
+            $table->string('station_name_departure', 50);
+            $table->string('station_name_arrival', 50);
+            $table->dateTimeTz('departure_date_time');
+            $table->dateTimeTz('arrival_date_time');
+            $table->uuid('train_code');
+            $table->unsignedInteger('train_carriages');
+            $table->boolean('late_for_station_name_departure')->default(0);
+            $table->boolean('cancelled_for_train_code')->default(0);
         });
     }
-    // Azienda
-    // Stazione di partenza
-    // Stazione di arrivo
-    // Orario di partenza
-    // Orario di arrivo
-    // Codice Treno
-    // Numero Carrozze
-    // In orario
-    // Cancellato
-    
     /**
      * Reverse the migrations.
      *
