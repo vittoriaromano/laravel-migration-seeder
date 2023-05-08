@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('station_name_arrival', 50);
             $table->dateTimeTz('departure_date_time');
             $table->dateTimeTz('arrival_date_time');
-            $table->uuid('train_code');
-            $table->unsignedInteger('train_carriages');
-            $table->boolean('late_for_station_name_departure')->default(0);
+            //uuid si autogenera
+            $table->string('train_code');
+            $table->unsignedTinyInteger('train_carriages')->default(1);
+            $table->boolean('late_for_train_code')->default(0);
             $table->boolean('cancelled_for_train_code')->default(0);
         });
     }

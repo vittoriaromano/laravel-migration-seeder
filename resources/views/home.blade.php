@@ -9,6 +9,12 @@
     <body>
         <div class="container">
             <h1>Template Migration Experiments</h1>
+            <ul>
+            @foreach ($trains as $train )
+              <li> {{$train->train_code}} - {{$train->station_name_departure}}  - {{$train->departure_date_time}}</li>
+                
+            @endforeach
+            </ul>
         </div>
 
     </body>
