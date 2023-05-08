@@ -9,8 +9,8 @@ use Illuminate\Support\Carbon;
 class PageController extends Controller
 {
     public function index(){
-        $trains = Train::all();
-        //$trains = Train::where('departure_date_time', '>=', now())->get();
+        //$trains = Train::all();
+        $trains = Train::where('departure_date_time', '>=', now())->get();
 
         return view ('home', compact('trains'));
     }
